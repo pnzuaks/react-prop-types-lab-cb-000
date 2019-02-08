@@ -18,7 +18,7 @@ class Product extends React.Component {
   }
 }
 
-var weight_range = [];
+let weight_range = [];
 for (let i = 80; i <= 300; i++) {
   weight_range.push(i);
 }
