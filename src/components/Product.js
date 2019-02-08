@@ -26,10 +26,10 @@ Product.propTypes = {
   producer: PropTypes.string,
   hasWatermark: PropTypes.bool,
   color: PropTypes.oneOf(['white', 'eggshell-white', 'salmon']).isRequired,
-  weight: weightAllowed
+  weight: weightPropShape
 }
 
-function weightAllowed(props, propName, componentName) {
+function weightPropShape(props, propName, componentName) {
   const value = props[propName];
   if (value === undefined) {
     return new Error(propName + 'cannot be undefined.  Validation failed.')
