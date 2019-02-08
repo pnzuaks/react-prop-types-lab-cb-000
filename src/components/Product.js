@@ -27,5 +27,16 @@ Product.propTypes = {
   producer: PropTypes.string,
   hasWatermark: PropTypes.bool,
   color: PropTypes.oneOf(['white', 'eggshell-white', 'salmon']).isRequired,
-  weight: PropTypes.oneOf(weight_range).isRequired
+  weight: PropTypes.oneOf(weightProp).isRequired
 };
+
+function weightProp(props, propName, componentName) {
+  const value = props[propName];
+  if (value === undefined) {
+    return new Error(propName + 'cannot be undefined.  Validation failed.')
+  } else if (isNaN(value)) {
+    return new Error(propName + 'is not a number.  Validation failed.');
+  } else if (value < 80 || value > 300) {
+    return new Error(propName + 'should be between 80 and 300.  Validation failed.')
+  }
+}
