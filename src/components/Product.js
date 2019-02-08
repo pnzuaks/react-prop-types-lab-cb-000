@@ -7,7 +7,7 @@ class Product extends React.Component {
     return (
       <div className="product">
         <ul>
-          <li>{ this.props.string }</li>
+          <li>{ this.props.name }</li>
           <li>{ this.props.producer }</li>
           <li>{ this.props.hasWatermark }</li>
           <li>{ this.props.color }</li>
